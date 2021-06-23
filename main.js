@@ -299,7 +299,7 @@ function resetInput() {
     getEle("password").value = "";
     // getEle("datepicker").value = "";
     getEle("luongCB").value = "";
-    getEle("chucvu").value = "";
+    getEle("chucvu").selectedIndex = 0;
     getEle("gioLam").value = "";
 }
 
