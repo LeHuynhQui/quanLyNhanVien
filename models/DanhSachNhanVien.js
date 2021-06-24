@@ -45,4 +45,18 @@ function DanhSachNhanVien() {
         return mangTimKiem;
     };
     
+
+    this.sapXepTangGiam = function (tangGiam) {
+        // let mangTangGiam = []
+        if (tangGiam) {
+            this.list.sort(function(a,b) {
+                return a.account - b.account
+            })
+        } else {
+            this.list.sort(function(a,b) {
+                return b.account - a.account
+            })
+        }
+        return this.list
+    }
 }

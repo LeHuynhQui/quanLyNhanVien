@@ -8,6 +8,12 @@
 	display: none;
 }
 
+#SapXepTang:hover, 
+#SapXepGiam:hover {
+  cursor: pointer;
+}
+
+
 #content{
 	width: 100%;
 	background: #74ebd5;  /* fallback for old browsers */

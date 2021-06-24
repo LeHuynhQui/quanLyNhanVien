@@ -33,7 +33,7 @@ function layThongTinNhanVien(isAdd) {
         validation.kiemTraDoDaiKyTu(
             account,
             "tbTKNV",
-            "* Vui lòng nhập từ 4 - 6 ký tự.",
+            "* Vui lòng nhập từ 4 - 6 ký số.",
             4,
             6
         )&&
@@ -46,7 +46,7 @@ function layThongTinNhanVien(isAdd) {
         validation.kiemTraSo(
             account,
             "tbTKNV",
-            "* Vui lòng nhập số.",
+            "* Vui lòng nhập số nguyên dương.",
         );
     }
 
@@ -110,12 +110,12 @@ function layThongTinNhanVien(isAdd) {
     validation.kiemTraSo(
         salary,
         "tbLuongCB",
-        "* Vui lòng nhập số.",
+        "* Vui lòng nhập số nguyên dương.",
     )&&
     validation.kiemtraLuongCoBan(
         salary,
         "tbLuongCB",
-        "* Vui lòng nhập lương cơ bản từ 10.000.000 - 20.000.000."
+        "* Vui lòng nhập lương cơ bản từ 1.000.000 - 20.000.000."
     )
 
     // position
@@ -135,7 +135,7 @@ function layThongTinNhanVien(isAdd) {
     validation.kiemTraSo(
         hour,
         "tbGiolam",
-        "* Vui lòng nhập số.",
+        "* Vui lòng nhập số nguyên dương.",
     )&&
     validation.kiemTraGioLam(
         hour,
@@ -210,9 +210,9 @@ function taoBang(list) {
                 <td>${nv.totalSalary.toLocaleString()}</td>
                 <td>${nv.type}</td>
                 <td>
-                    <button type="button" class="btn btn-danger mb-2" onclick="xoaNhanVien(${index})">XOÁ</button>
-                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                    data-target="#myModal" onclick="handleSua(${index})">SỬA</button>
+                    <button type="button" class="btn btn-danger mb-1" onclick="xoaNhanVien(${index})"><i class="fas fa-trash"></i></button>
+                    <button type="button" class="btn btn-primary mb-1" data-toggle="modal"
+                    data-target="#myModal" onclick="handleSua(${index})"><i class="fas fa-user-edit"></i></button>
                 </td>
             </tr>
         `
@@ -315,4 +315,21 @@ function setLayoutAddBtn(params) {
     getEle("btnThemNV").classList.remove("d-none");
     getEle("btnCapNhat").classList.add("d-none");
     getEle("header-title").innerHTML = "THÊM NHÂN VIÊN";    
+}
+
+
+// sap xep
+
+function sapXep (tangGiam) {
+    if(tangGiam) {
+        getEle("SapXepTang").style.display = "none";
+        getEle("SapXepGiam").style.display = "inline-block";
+        let mangSapXepTang = dsnv.sapXepTangGiam(tangGiam)
+        taoBang(mangSapXepTang)
+    } else {
+        getEle("SapXepTang").style.display = "inline-block";
+        getEle("SapXepGiam").style.display = "none";
+        let mangSapXepGiam = dsnv.sapXepTangGiam(tangGiam)
+        taoBang(mangSapXepGiam)
+    }
 }

@@ -8,6 +8,7 @@
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 	<!-- Bootstrap 4 -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -113,6 +114,12 @@
 								<h3 class="text-left text-primary font-weight-bold">Danh sách nhân viên</h3>
 							</div>
 							<div class="col-md-6 text-right">
+								<a href="/">
+									<button type="button" id="sidebarCollapse" class="btn btn-warning navbar-btn">
+										<i class="fas fa-sync-alt"></i>
+										<span>Refresh </span>
+									</button>
+								</a>
 								<button class="btn btn-primary" id="btnThem" data-toggle="modal"
 									data-target="#myModal" onclick="setLayoutAddBtn()">Thêm nhân viên</button>
 							</div>
@@ -136,8 +143,8 @@
 								<tr>
 									<th class="nowrap">
 										<span class="mr-1">Tài khoản</span>
-										<i class="fa fa-arrow-up" id="SapXepTang"></i>
-										<i class="fa fa-arrow-down" id="SapXepGiam"></i>
+										<i class="fa fa-arrow-up" id="SapXepTang" onclick="sapXep(1)"></i>
+										<i class="fa fa-arrow-down" id="SapXepGiam" onclick="sapXep(0)"></i>
 									</th>
 									<th>Họ và tên</th>
 									<th>Email</th>

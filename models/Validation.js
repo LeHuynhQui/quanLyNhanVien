@@ -85,7 +85,7 @@ function Validation() {
     };
 
     this.kiemtraLuongCoBan = function(input, divId, mess) {
-        if (input >= 10000000 && input <= 20000000) {
+        if (input >= 1000000 && input <= 20000000) {
             getEle(divId).innerHTML = "";
             return true;
         }
