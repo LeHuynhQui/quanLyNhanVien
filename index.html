@@ -233,12 +233,16 @@
 							</div>
 
 							<div class="form-group">
-								<div class="input-group">
+								<div class="input-group position-relative">
 									<div class="input-group-prepend">
 										<span class="input-group-text"><i class="fa fa-key"></i></span>
 									</div>
 									<input type="password" name="password" id="password" class="form-control input-sm"
 										placeholder="Mật khẩu">
+
+									<span id="hide" class="input-group-text bg-transparent border-0 eye" onclick="hidePassword(1)"><i class="fas fa-eye"></i></span>
+									<span id="show" class="input-group-text bg-transparent border-0 d-none eye" onclick="hidePassword(0)"><i class="fas fa-eye-slash"></i></span>
+									
 								</div>
 								<span class="sp-thongbao" id="tbMatKhau"></span>
 							</div>

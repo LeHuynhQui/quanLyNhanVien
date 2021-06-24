@@ -30,3 +30,15 @@
 #btnTimNV:hover {
   cursor: pointer;
 }
+
+.eye {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+}
+
+.eye:hover {
+  cursor: pointer;
+}

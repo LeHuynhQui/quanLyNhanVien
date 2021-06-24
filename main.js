@@ -91,7 +91,7 @@ function layThongTinNhanVien(isAdd) {
     validation.kiemTraPassword(
         password,
         "tbMatKhau",
-        "* Mật khẩu phải chứa ít nhất 1 ký tự số, 1 ký tự in hoa và 1 ký tự đặc biệt."
+        "* Mật khẩu phải chứa ít nhất 1 ký tự số, 1 ký tự in hoa, 1 ký tự thường và 1 ký tự đặc biệt."
     )
 
     // date
@@ -236,6 +236,13 @@ function handleSua(index) {
     getEle("btnThemNV").classList.add("d-none");
     getEle("btnCapNhat").classList.remove("d-none");
     getEle("header-title").innerHTML = "CẬP NHẬT NHÂN VIÊN";
+
+    getEle("hide").classList.remove("d-none");
+    getEle("show").classList.add("d-none");
+    getEle("password").type = "password";
+
+
+
     document.querySelectorAll(".sp-thongbao").forEach(span => {
         span.innerHTML = ""
     })
@@ -249,7 +256,10 @@ function handleSua(index) {
 
         getEle("name").value = nhanVien.name;
         getEle("email").value = nhanVien.email;
+
         getEle("password").value = nhanVien.password;
+        // getEle("password").type = "text";
+
         getEle("datepicker").value = nhanVien.date;
         getEle("luongCB").value = nhanVien.salary;
         getEle("chucvu").value = nhanVien.position;
@@ -314,7 +324,11 @@ function setLayoutAddBtn(params) {
     resetInput()
     getEle("btnThemNV").classList.remove("d-none");
     getEle("btnCapNhat").classList.add("d-none");
-    getEle("header-title").innerHTML = "THÊM NHÂN VIÊN";    
+    getEle("header-title").innerHTML = "THÊM NHÂN VIÊN"; 
+    
+    getEle("hide").classList.remove("d-none");
+    getEle("show").classList.add("d-none");
+    getEle("password").type = "password";
 }
 
 
@@ -331,5 +345,19 @@ function sapXep (tangGiam) {
         getEle("SapXepGiam").style.display = "none";
         let mangSapXepGiam = dsnv.sapXepTangGiam(tangGiam)
         taoBang(mangSapXepGiam)
+    }
+}
+
+
+// hide password
+function hidePassword (isHide) {
+    if (isHide) {
+        getEle("hide").classList.add("d-none");
+        getEle("show").classList.remove("d-none");
+        getEle("password").type = "text";
+    } else {
+        getEle("hide").classList.remove("d-none");
+        getEle("show").classList.add("d-none");
+        getEle("password").type = "password";
     }
 }
