@@ -296,7 +296,13 @@ getEle("btnTimNV").addEventListener("click", e => {
 
     let mangNVTimKiem = dsnv.timKiemNhanVien(key)
 
-    taoBang(mangNVTimKiem)
+    if (mangNVTimKiem.length) {
+        taoBang(mangNVTimKiem)
+    } else {
+        getEle("tableDanhSach").innerHTML =`<tr>
+            <td colspan="8" class="text-center">Không có kết quả phù hợp.</td>
+        </tr>`
+    }
 
 })
 
